@@ -1,45 +1,289 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Onion Systems </title>
-    <link rel="stylesheet" href="../css/home.css">
-    <script src="https://kit.fontawesome.com/fec10f46ff.js" crossorigin="anonymous"></script> <!-- Ícone do Font Awesome, que serve para adicionar ícones à página, usando o site https://fontawesome.com/ -->
+    <title>Onion Systems — Soluções Digitais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <!-- Cabeçalho da página -->
-    <header>
-        <!-- Navegação da página, que contém os links para as diferentes seções da página -->
-        <nav>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </nav>
-
+    <header class="cabecalho-principal">
+        <div class="header-container">
+            <a href="#home" class="logo">
+                <img src="Logo2.png" alt="Onion Systems Logo">
+                <div class="logo-texto">
+                    <span class="brand-title">ONION</span>
+                    <span class="brand-subtitle">SYSTEMS</span>
+                </div>
+            </a>
+            <nav class="menu-navegacao">
+                <ul>
+                    <li><a href="#home" class="active">Início</a></li>
+                    <li><a href="#sobre">Sobre nós</a></li>
+                    <li><a href="#servicos">Produtos e serviços</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="social-links-header">
+                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <a href="#contato" class="btn-fale-conosco">Fale conosco <i class="fas fa-paper-plane"></i></a>
+            </div>
+        </div>
     </header>
-
-
-    <!-- Conteúdo principal da página, que é divido em seções -->
     <main>
-
-        <section></section>
-        <section></section>
-        <section></section>
-        <section></section>
-
+        <section id="home" class="hero-section">
+            <div class="swiper swiper-hero">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="hero-content">
+                            <div class="hero-text">
+                                <span class="tagline">TECNOLOGIA QUE IMPULSIONA O SEU NEGÓCIO</span>
+                                <h1>Soluções digitais para um futuro <span class="text-highlight">mais eficiente.</span></h1>
+                                <p>A Onion Systems desenvolve sistemas e soluções em tecnologia para empresas que buscam mais organização, segurança e inovação em seus processos.</p>
+                                <div class="hero-buttons">
+                                    <a href="#servicos" class="btn-primary">Conheça nossos produtos <i class="fas fa-arrow-circle-right"></i></a>
+                                    <a href="#sobre" class="btn-outline">Sobre nós</a>
+                                </div>
+                            </div>
+                            <div class="hero-image">
+                                <img src="Logo2.png" alt="Cubo 3D Onion Systems">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="hero-content">
+                            <div class="hero-text">
+                                <span class="tagline">GESTÃO INTELIGENTE DE CONTRATOS</span>
+                                <h1>Controle total sobre <span class="text-highlight">seus contratos e prazos.</span></h1>
+                                <p>Centralize informações contratuais com facilidade, receba alertas de renovação e evite prejuízos em sua empresa.</p>
+                                <div class="hero-buttons">
+                                    <a href="#servicos" class="btn-primary">Ver soluções <i class="fas fa-arrow-circle-right"></i></a>
+                                    <a href="#contato" class="btn-outline">Solicitar Demo</a>
+                                </div>
+                            </div>
+                            <div class="hero-image">
+                                <img src="Logo1.png" alt="Onion Systems Contratos">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="hero-content">
+                            <div class="hero-text">
+                                <span class="tagline">SUPORTE E ATENDIMENTO ÁGIL</span>
+                                <h1>Atendimento eficiente e <span class="text-highlight">chamados sob controle.</span></h1>
+                                <p>Gerencie chamados de TI e suporte interno com métricas de desempenho e alta visibilidade para os gestores.</p>
+                                <div class="hero-buttons">
+                                    <a href="#servicos" class="btn-primary">Saiba mais <i class="fas fa-arrow-circle-right"></i></a>
+                                    <a href="#contato" class="btn-outline">Fale conosco</a>
+                                </div>
+                            </div>
+                            <div class="hero-image">
+                                <img src="Logo2.png" alt="Cubo 3D Suporte">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+        <section class="diferenciais-bar">
+            <div class="container-diferenciais">
+                <div class="diferencial-item">
+                    <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
+                    <div class="diferencial-info">
+                        <h3>Segurança</h3>
+                        <p>Seus dados sempre protegidos</p>
+                    </div>
+                </div>
+                <div class="diferencial-item">
+                    <div class="icon-box"><i class="fas fa-bolt"></i></div>
+                    <div class="diferencial-info">
+                        <h3>Desempenho</h3>
+                        <p>Sistemas rápidos e eficientes</p>
+                    </div>
+                </div>
+                <div class="diferencial-item">
+                    <div class="icon-box"><i class="fas fa-code"></i></div>
+                    <div class="diferencial-info">
+                        <h3>Inovação</h3>
+                        <p>Tecnologia de ponta</p>
+                    </div>
+                </div>
+                <div class="diferencial-item">
+                    <div class="icon-box"><i class="fas fa-headset"></i></div>
+                    <div class="diferencial-info">
+                        <h3>Suporte</h3>
+                        <p>Sempre ao seu lado</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="servicos" class="secao-solucoes">
+            <div class="solucoes-header">
+                <div class="solucoes-intro">
+                    <span class="sub-tag">NOSSAS SOLUÇÕES</span>
+                    <h2>Sistemas e serviços <br><span class="text-highlight">para sua empresa</span></h2>
+                    <p>Desenvolvemos soluções sob medida para atender às necessidades do seu negócio, com foco em qualidade, segurança e suporte contínuo.</p>
+                    <a href="#contato" class="btn-link">Ver todos os produtos e serviços <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div class="cards-grid">
+                    <article class="card-servico">
+                        <div class="card-icon"><i class="fas fa-desktop"></i></div>
+                        <h3>Sistemas Web</h3>
+                        <p>Plataformas completas e personalizadas para o seu negócio.</p>
+                        <a href="#contato" class="btn-icon-action" aria-label="Acessar Sistemas Web"><i class="fas fa-arrow-right"></i></a>
+                    </article>
+                    <article class="card-servico">
+                        <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+                        <h3>Aplicativos Mobile</h3>
+                        <p>Leve sua empresa para o próximo nível com apps modernos e intuitivos.</p>
+                        <a href="#contato" class="btn-icon-action" aria-label="Acessar Aplicativos Mobile"><i class="fas fa-arrow-right"></i></a>
+                    </article>
+                    <article class="card-servico">
+                        <div class="card-icon"><i class="fas fa-database"></i></div>
+                        <h3>Banco de Dados</h3>
+                        <p>Organização e segurança para as suas informações.</p>
+                        <a href="#contato" class="btn-icon-action" aria-label="Acessar Banco de Dados"><i class="fas fa-arrow-right"></i></a>
+                    </article>
+                    <article class="card-servico">
+                        <div class="card-icon"><i class="fas fa-cloud"></i></div>
+                        <h3>Consultoria em TI</h3>
+                        <p>Orientação especializada para o melhor uso da tecnologia.</p>
+                        <a href="#contato" class="btn-icon-action" aria-label="Acessar Consultoria em TI"><i class="fas fa-arrow-right"></i></a>
+                    </article>
+                </div>
+                <div class="blog-destaque-card">
+                    <div class="swiper swiper-blog">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="blog-slide-inner">
+                                    <span class="badge-destaque">DESTAQUE</span>
+                                    <h3>Como a tecnologia pode transformar o seu negócio</h3>
+                                    <a href="#blog" class="btn-icon-action" aria-label="Ler artigo"><i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="blog-slide-inner">
+                                    <span class="badge-destaque">SEGURANÇA</span>
+                                    <h3>A importância da gestão contínua de contratos em TI</h3>
+                                    <a href="#blog" class="btn-icon-action" aria-label="Ler artigo"><i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-prev nav-sm"></div>
+                        <div class="swiper-button-next nav-sm"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="sobre" class="secao-sobre">
+            <div class="sobre-container">
+                <div class="sobre-imagem">
+                    <img src="Logo1.png" alt="Sobre a Onion Systems">
+                </div>
+                <div class="sobre-texto">
+                    <span class="sub-tag">SOBRE NÓS</span>
+                    <h2>Conheça a <span class="text-highlight">Onion Systems</span></h2>
+                    <p>Nascemos com o propósito de simplificar processos empresariais complexos. Oferecemos plataformas ágeis para gestão de contratos, suporte técnico e consultoria estratégica em TI.</p>
+                    <p>Nossa missão é garantir alta produtividade, estabilidade e segurança digital para organizações de todos os portes.</p>
+                </div>
+            </div>
+        </section>
+        <section id="blog" class="secao-blog">
+            <div class="blog-header-title">
+                <span class="sub-tag">NOSSO BLOG</span>
+                <h2>Últimas Notícias & Artigos</h2>
+            </div>
+            <div class="blog-grid">
+                <article class="blog-post-card">
+                    <h3>Tendências em desenvolvimento web para 2026</h3>
+                    <p>Descubra como novas arquiteturas e inteligência artificial estão remodelando aplicações empresariais.</p>
+                    <a href="#blog">Ler mais <i class="fas fa-chevron-right"></i></a>
+                </article>
+                <article class="blog-post-card">
+                    <h3>Como otimizar a gestão de chamados na sua empresa</h3>
+                    <p>Estratégias práticas para reduzir tempo de resposta e aumentar a satisfação do cliente interno.</p>
+                    <a href="#blog">Ler mais <i class="fas fa-chevron-right"></i></a>
+                </article>
+                <article class="blog-post-card">
+                    <h3>Boas práticas de segurança em banco de dados</h3>
+                    <p>Proteja suas informações corporativas contra acessos não autorizados e vazamentos.</p>
+                    <a href="#blog">Ler mais <i class="fas fa-chevron-right"></i></a>
+                </article>
+            </div>
+        </section>
+        <section id="contato" class="secao-contato">
+            <div class="contato-container">
+                <div class="contato-info">
+                    <span class="sub-tag">FALE CONOSCO</span>
+                    <h2>Vamos iniciar um <span class="text-highlight">projeto juntos?</span></h2>
+                    <p>Preencha o formulário e nossa equipe entrará em contato em breve para entender suas necessidades.</p>
+                </div>
+                <form id="formContato" class="form-contato">
+                    <div class="campo">
+                        <label for="nome">Nome completo</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                    </div>
+                    <div class="campo">
+                        <label for="email">E-mail corporativo</label>
+                        <input type="email" id="email" name="email" placeholder="nome@suaempresa.com" required>
+                    </div>
+                    <div class="campo">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Descreva seu projeto ou dúvida..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-success">Enviar mensagem <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </section>
+        <section id="politicas" class="secao-politicas">
+            <div class="politicas-container">
+                <h3>Políticas da Empresa & Privacidade</h3>
+                <p>A Onion Systems respeita a privacidade de seus usuários e clientes. Todos os dados coletados neste formulário cumprem as diretrizes da LGPD (Lei Geral de Proteção de Dados). Garantimos criptografia avançada e sigilo absoluto das suas informações institucionais.</p>
+            </div>
+        </section>
     </main>
-
-    <!-- Rodapé da página -->
-    <footer></footer>
-
-    <script src="../js/home.js"></script>
+    <footer class="rodape-principal">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#home" class="logo">
+                    <img src="Logo2.png" alt="Onion Systems Logo">
+                    <div class="logo-texto">
+                        <span class="brand-title">ONION</span>
+                        <span class="brand-subtitle">SYSTEMS</span>
+                    </div>
+                </a>
+            </div>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#sobre">Sobre nós</a></li>
+                    <li><a href="#servicos">Produtos e serviços</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#politicas">Políticas</a></li>
+                </ul>
+            </nav>
+            <div class="footer-social">
+                <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2026 Onion Systems. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>
