@@ -1,56 +1,189 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const swiperHero = new Swiper(".swiper-hero", {
-        loop: true,
-        autoplay: {
-            delay: 5000,
-            disableOnInteraction: false,
-        },
-        navigation: {
-            nextEl: ".swiper-hero .swiper-button-next",
-            prevEl: ".swiper-hero .swiper-button-prev",
-        },
-        pagination: {
-            el: ".swiper-hero .swiper-pagination",
-            clickable: true,
-        },
-    });
-    const swiperBlog = new Swiper(".swiper-blog", {
-        loop: true,
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        },
-        navigation: {
-            nextEl: ".swiper-blog .swiper-button-next",
-            prevEl: ".swiper-blog .swiper-button-prev",
-        },
-    });
-    const navLinks = document.querySelectorAll('.menu-navegacao a');
-    const sections = document.querySelectorAll('section');
 
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= (sectionTop - 150)) {
-                current = section.getAttribute('id');
+    const reduzMovimento =
+        window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // Carrosséis
+    if (typeof Swiper !== "undefined") {
+
+        // Carrossel principal
+        const swiperHeroElement = document.querySelector(".swiper-hero");
+
+        if (swiperHeroElement) {
+
+            const swiperHero = new Swiper(swiperHeroElement, {
+                loop: true,
+
+                autoplay: reduzMovimento
+                    ? false
+                    : {
+                        delay: 5000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true
+                    },
+
+                pagination: {
+                    el: ".swiper-hero .swiper-pagination",
+                    clickable: true
+                },
+
+                observer: true,
+                observeParents: true,
+                watchOverflow: false,
+                speed: 600,
+
+                // Permite que os botões funcionem normalmente
+                preventClicks: false,
+                preventClicksPropagation: false
+            });
+
+            const botaoHeroNext =
+                swiperHeroElement.querySelector(".swiper-button-next");
+
+            const botaoHeroPrev =
+                swiperHeroElement.querySelector(".swiper-button-prev");
+
+            if (botaoHeroNext) {
+                botaoHeroNext.addEventListener(
+                    "click",
+                    function (evento) {
+                        evento.preventDefault();
+                        evento.stopPropagation();
+                        swiperHero.slideNext();
+                    },
+                    true
+                );
             }
+
+            if (botaoHeroPrev) {
+                botaoHeroPrev.addEventListener(
+                    "click",
+                    function (evento) {
+                        evento.preventDefault();
+                        evento.stopPropagation();
+                        swiperHero.slidePrev();
+                    },
+                    true
+                );
+            }
+        }
+
+        // Carrossel do blog
+        const swiperBlogElement = document.querySelector(".swiper-blog");
+
+        if (swiperBlogElement) {
+
+            const swiperBlog = new Swiper(swiperBlogElement, {
+                loop: true,
+
+                autoplay: reduzMovimento
+                    ? false
+                    : {
+                        delay: 4000,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true
+                    },
+
+                observer: true,
+                observeParents: true,
+                watchOverflow: false,
+                speed: 600,
+
+                preventClicks: false,
+                preventClicksPropagation: false
+            });
+
+            const botaoBlogNext =
+                swiperBlogElement.querySelector(".swiper-button-next");
+
+            const botaoBlogPrev =
+                swiperBlogElement.querySelector(".swiper-button-prev");
+
+            if (botaoBlogNext) {
+                botaoBlogNext.addEventListener(
+                    "click",
+                    function (evento) {
+                        evento.preventDefault();
+                        evento.stopPropagation();
+                        swiperBlog.slideNext();
+                    },
+                    true
+                );
+            }
+
+            if (botaoBlogPrev) {
+                botaoBlogPrev.addEventListener(
+                    "click",
+                    function (evento) {
+                        evento.preventDefault();
+                        evento.stopPropagation();
+                        swiperBlog.slidePrev();
+                    },
+                    true
+                );
+            }
+        }
+
+    } else {
+        console.error(
+            "Swiper não foi carregado. Verifique o CDN no HTML."
+        );
+    }
+
+    // Menu mobile
+    const menuButton = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu-navegacao");
+
+    if (menuButton && menu) {
+
+        menuButton.addEventListener("click", function () {
+
+            // Abre ou fecha o menu
+            menu.classList.toggle("aberto");
+
+            const aberto =
+                menu.classList.contains("aberto");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                aberto
+            );
         });
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    });
-    const formContato = document.querySelector("#formContato");
-    if (formContato) {
-        formContato.addEventListener("submit", function (e) {
-            e.preventDefault();
-            alert("Sua mensagem foi enviada com sucesso! Em breve a equipe da Onion Systems entrará em contato.");
-            formContato.reset();
+        const linksMenu =
+            menu.querySelectorAll("a");
+
+        linksMenu.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                // Fecha o menu depois de clicar em um link
+                menu.classList.remove("aberto");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            });
         });
     }
+
+    // Fecha o menu ao redimensionar a tela
+    window.addEventListener("resize", function () {
+
+        if (
+            window.innerWidth > 768 &&
+            menu &&
+            menuButton
+        ) {
+            menu.classList.remove("aberto");
+
+            menuButton.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+        }
+    });
+
 });
