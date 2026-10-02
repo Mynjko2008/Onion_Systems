@@ -613,6 +613,10 @@ CREATE INDEX idx_logs_data_hora ON tb_logs_auditoria (data_hora);
 -- Facilita a filtragem das mensagens de contato pelo status.
 CREATE INDEX idx_contatos_status ON tb_contatos (id_status_contato);
 
+-- Facilita a verificação de limite de envios e de mensagens duplicadas
+-- feita pelo back-end, que consulta os contatos recentes de um e-mail.
+CREATE INDEX idx_contatos_email_data ON tb_contatos (email, created_at);
+
 
 -- DADOS INICIAIS
 -- Insere informações básicas utilizadas pelo sistema.
@@ -684,21 +688,6 @@ INSERT INTO tb_status_contato (nome, descricao) VALUES
 ('Em atendimento', 'Mensagem em análise pela equipe'),
 ('Respondido',     'Retorno já enviado ao visitante'),
 ('Arquivado',      'Mensagem finalizada e arquivada');
-
-
--- Registro utilizado para testar o funcionamento do formulário de contato.
--- O status é localizado pelo nome para não depender do valor do ID gerado.
-INSERT INTO tb_contatos (id_status_contato, nome, email, mensagem, consentimento, consentimento_data, consentimento_versao) VALUES
-(
-    (SELECT id_status_contato FROM tb_status_contato WHERE nome = 'Novo'),
-    'João Silva',
-    'joao@email.com',
-    'Gostaria de saber sobre seus serviços.',
-    TRUE,
-    NOW(),
-    'v1.0'
-);
-
 
 -- VIEWS
 -- Views são consultas salvas que permitem reunir informações
