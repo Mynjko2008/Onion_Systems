@@ -1,0 +1,3 @@
+# Bloqueia o acesso direto a tudo dentro de Back-End.
+# Somente a pasta api/ é pública (ela tem seu próprio .htaccess).
+Require all denied
