@@ -83,6 +83,7 @@ O visitante nunca vê detalhes técnicos. O `display_errors` fica sempre desliga
 
 ## Limitações conhecidas
 
+- O honeypot `url_site` barra bots simples que preenchem todos os campos, mas não bots que renderizam a página como um navegador. Para esses casos, o ideal é adicionar CAPTCHA ou limite de requisições no servidor web.
 - O limite de envios é por **e-mail**, não por IP: quem trocar de e-mail a cada envio contorna o limite. Limitar por IP exigiria guardar o IP (dado pessoal) e uma coluna nova; está fora do escopo atual. Para tráfego de abuso real, o ideal é um limitador no servidor web ou um CAPTCHA.
 - O texto é gravado como o visitante digitou (sem escape de HTML). O **escape deve ser feito ao exibir** a mensagem no painel (`textContent` no JavaScript ou `htmlspecialchars` no PHP).
 

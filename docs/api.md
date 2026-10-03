@@ -22,6 +22,7 @@ Aceita `multipart/form-data` (FormData), `application/x-www-form-urlencoded` ou 
 | `email` | texto | sim | E-mail válido, até 150 caracteres. Gravado em minúsculas |
 | `mensagem` | texto | sim | 10 a 2000 caracteres, no máximo 3 links |
 | `consentimento` | booleano | sim | Deve ser aceito: `on`, `1`, `true` ou `true` em JSON |
+| `url_site` | texto | não | Campo reservado ao honeypot; deve permanecer vazio. Se preenchido, a API responde com sucesso sem gravar a mensagem |
 
 Os textos são limpos antes da validação: espaços das pontas e caracteres de controle invisíveis são removidos.
 A data do consentimento e a versão da política são definidas pelo servidor.
@@ -41,6 +42,7 @@ A data do consentimento e a versão da política são definidas pelo servidor.
 `OPTIONS` responde `204` (pré-verificação de CORS).
 
 O valor de `campo` nos erros `400` é o `name` do input a destacar: `nome`, `email`, `mensagem` ou `consentimento`.
+O campo `url_site` é reservado ao honeypot do formulário e não deve ser removido nem preenchido pelo front-end.
 
 ### Exemplos
 

@@ -30,7 +30,7 @@ class ContatoController
 
         // Valida antes de abrir a conexão com o banco.
         $entrada = $this->lerEntrada();
-        $honeypot = $entrada['website'] ?? '';
+        $honeypot = $entrada['url_site'] ?? '';
         // Disfarca a deteccao para o bot e evita gravar a mensagem.
         if (!is_string($honeypot) || trim($honeypot) !== '') {
             responder(200, true, 'Mensagem enviada com sucesso! Entraremos em contato em breve.');
